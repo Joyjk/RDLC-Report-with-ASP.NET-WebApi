@@ -30,9 +30,9 @@ namespace RDLCwithApi.Controllers
         public IActionResult Get()
         {
             var dt = new DataTable();
-            //dt = GetUserSql();
+            dt = GetUserSql();
 
-            dt = GetUserList();
+            //dt = GetUserList();
 
 
             string mimtype = "";
@@ -77,29 +77,29 @@ namespace RDLCwithApi.Controllers
             return dt;
         }
 
-        //public DataTable GetUserSql()
-        //{
-        //    DataTable dt = new DataTable();
-        //    string q = string.Format(@"select * from Users ");
-        //    var data = _sqlDal.Select<User>(q, ref msg);
-        //    dt.Columns.Add("UserId");
-        //    dt.Columns.Add("Name");
-        //    dt.Columns.Add("Email");
-        //    dt.Columns.Add("Phone");
-        //    dt.Columns.Add("Password");
-        //    DataRow row;
-        //    foreach (var item in data)
-        //    {
-        //        row = dt.NewRow();
-        //        row["UserId"] = item.UserId;
-        //        row["Name"] = item.Name;
-        //        row["Email"] = item.Email;
-        //        row["Phone"] = item.Phone;
-        //        row["Password"] = item.Password;
+        public DataTable GetUserSql()
+        {
+            DataTable dt = new DataTable();
+            string q = string.Format(@"select * from Users ");
+            var data = _sqlDal.Select<User>(q, ref msg);
+            dt.Columns.Add("UserId");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Email");
+            dt.Columns.Add("Phone");
+            dt.Columns.Add("Password");
+            DataRow row;
+            foreach (var item in data)
+            {
+                row = dt.NewRow();
+                row["UserId"] = item.UserId;
+                row["Name"] = item.Name;
+                row["Email"] = item.Email;
+                row["Phone"] = item.Phone;
+                row["Password"] = item.Password;
 
-        //        dt.Rows.Add(row);
-        //    }
-        //    return dt;
-        //}
+                dt.Rows.Add(row);
+            }
+            return dt;
+        }
     }
 }

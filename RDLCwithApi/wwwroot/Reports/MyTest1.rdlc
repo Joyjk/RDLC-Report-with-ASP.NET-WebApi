@@ -434,6 +434,42 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox13">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value> Total:  </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Sum(CInt(IIF(IsNumeric(Fields!UserId.Value), Fields!UserId.Value, 0)))</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox13</rd:DefaultName>
+            <Top>1.07638in</Top>
+            <Left>4.01982in</Left>
+            <Height>0.25in</Height>
+            <Width>2.14558in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>2in</Height>
         <Style />
